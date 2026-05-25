@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <title>Shopee pricing</title>
+    </head>
+    <body>
+        <header>
+            <h1>Kalkulator Biaya Admin Shopee dan Harga Jual</h1>
+        </header>           
+           
+        <main>
+            <section>    
+            <p>Untuk menghitung berapa seharusnya harga jual produk kita setelah ditambah biaya admin dan layanan lainnya dari shopee seperti Gratis Ongkir Xtra <strong>maksimal 4.5%.</strong> Hitungan / kalkulator ini hanya berlaku untuk para reseller dan tidak berlaku untuk para pemilik merk / brand karena komponen untuk menghitung biaya produksi mereka sangat beragam.</p>
+            
+            <p> Maka rumusnya adalah =<strong> Harga Jual (Modal + Keuntungan) &divide; (1 - %Total Biaya)</strong> Dimana Total Biaya = Biaya admin + Layanan Shopee (Gratis Ongkir Xtra, dll). Tabel dibawah ini adalah biaya admin shopee dari masing2 kategori.</p>
+            </section>
+
+         <section>   
+            <table>
+            <thead>      
+           <tr>
+               <th>Kategori</th>
+               <th>Biaya Administrasi (non star, star, dan star+)</th>
+           </tr>
+            </thead>
+           <tbody> 
+           <tr>
+               <td>Aksesori Fashion</td>
+               <td>4.25 % - 9 %</td>
+            </tr> 
+
+            <tr>
+                <td>Fashion Bayi & Anak</td>
+                <td>4.25 % - 9 %</td>
+            </tr>
+
+            <tr>
+                <td>Fashion Muslim</td>
+                <td>8.25 % - 10 %</td>
+            </tr>
+            <tr>
+                <td>Jam Tangan</td>
+                <td>9 %</td>
+            </tr>
+            <tr>
+                <td>Koper & Tas Travel</td>
+                <td>9 % - 10 %</td>
+            </tr>
+           </tbody> 
+           </table>
+        <section id="calculator" aria-labelledby="calc-heading">
+            <h2 id="calc-heading">Hitung Harga Jual Anda</h2>
+            <form id="pricing-form" autocomplete="off" novalidate>
+            <div class="form-group">
+            <label for="modal">Modal / HPP (Rp)</label> 
+            <input type="number" id="modal" name="modal" placeholder="Contoh: 50000" required min="0">   
+            </div>
+            
+            <div class="form-group">
+            <label for="profit">Target Keuntungan (Rp)</label>
+            <input type="number" id="profit" name="profit" placeholder="Contoh: 10000" required min="0"> 
+            </div>
+
+            <div class="form-group">
+            <label for="category">Kategori Produk</label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>Pilih Kategori...</option>
+                <option value="aksesoris">Aksesoris Fashion (4.25% - 9%)</option>
+                <option value="fashion-bayi">Fashion Bayi Dan Anak (4.25% - 9%)</option>
+                <option value="fashion-muslim">Fashion Muslim (8.25% - 10%)</option>
+                <option value="jam-tangan">Jam Tangan (9%)</option>
+                <option value="koper-tas">Koper & Tas Travel (9% - 10%)</option>
+                <option value="custom">--- Lainnya (input manual) ---</option>
+            </select>   
+            </div>
+            <!-- Custom Category Input (hidden by default) --> 
+            <div class="form-group" id="custom-category-group" style="display: none;">
+    <label for="custom-category">Nama Kategori</label>
+    <input type="text" id="custom-category" placeholder="Contoh: Elektronik, Rumah Tangga, dll">
+    
+    <label for="custom-fee" style="margin-top: 10px;">Biaya Admin Shopee (%)</label>
+    <input type="number" id="custom-fee" placeholder="Contoh: 8.5" step="0.01" min="0" max="100">
+    <small style="color: #666;">Masukkan persentase biaya admin (tanpa tanda %)</small>
+</div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="ongkir-xtra" name="ongkir-xtra">
+                <label for="ongkir-xtra">Tambahkan Gratis Ongkir Xtra (+4.5%)</label>
+            </div>
+            <div class="button-group" style="margin-top: 20px;">
+            <button type="submit" class="button1">Hitung Harga Jual</button>
+            <button type="reset" class="button1" style="margin-left: 10px;">Reset Form</button>
+            </div>
+            </form>
+
+            <output id="hasil" aria-live="polite"></output>
+        </section>      
+        </section>
+        </main>
+           
+        <footer>   
+        <p class="link-to">Untuk keterangan mengenai biaya penjual shopee per kategori produk yang lebih lengkap silahkan kunjungi website : <a href="https://seller.shopee.co.id/edu/article/15965" target="_blank" rel="noopener noreferrer" class="button1">Pusat Edukasi Penjual Shopee</a></p>
+       </footer> 
+    </body>
+</html>
+

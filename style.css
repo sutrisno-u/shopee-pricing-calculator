@@ -1,0 +1,193 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #C2F8CB;
+    color:  #1B512D;
+    line-height: 1.6;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+section p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
+}
+
+table, th, td {
+    border: 1px solid #1B512D;  
+}
+
+th {
+   background-color: #1B512D;
+   color: white;
+   padding: 12px; 
+}
+
+td {
+   padding: 10px;
+   text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #C2F8CB;
+}
+
+.link-to {
+    outline: 1px dotted green;
+}
+
+.button1 {
+    display: inline-block;
+    padding: 2px;
+    border: 2px solid green;
+    background-color: white;
+    color: #1B512D;
+    cursor: pointer;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    transition: all 0.2s ease-in-out;
+}
+
+.button1:hover {
+    background-color: #1B512D;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* BASE STYLE (luar media query) */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px; /* 👈 Tambah ini */
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .button1:active {
+         transform: translateY(0);
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .button-group .button1 {
+        margin-left: 0 !important;
+        margin-bottom: 10px;
+    }
+
+
+body {
+        background-color: #C2F8CB;
+        padding: 15px 10px; /* Memperkecil jarak pinggir layar di HP */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Mengecilkan ukuran judul utama */
+    }
+
+    section p {
+        font-size: 14px; /* Mengecilkan teks penjelasan */
+        text-align: left; /* Teks rata kiri lebih nyaman dibaca di layar sempit */
+    }
+
+     table {
+        font-size: 12px; 
+    }
+    th, td {
+        padding: 8px 4px; 
+    }
+
+    /* Mengubah form dari samping menjadi tersusun ke bawah */
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .checkbox-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-bottom: 29px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+        width: auto;
+        margin: 0;
+    }
+    
+    /* Custom category group padding */
+    #custom-category-group {
+        padding: 10px;
+    }
+}   
+
+#custom-category-group {
+    background-color: #f0f9f4;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px dashed #1B512D;
+    margin-top: 10px;
+}
+
+#custom-category-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+#custom-category-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #1B512D;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#custom-category-group small {
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+}
