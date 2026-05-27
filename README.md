@@ -9,8 +9,8 @@ Live Demo :  https://sutrisno-u.github.io/shopee-pricing-calculator
 
 ### Desktop View
 <img src="screenshots/desktop-view.png" width="600" alt="Desktop View">
+
 ### Mobile View
-<img src="screenshots/mobile-view1.png" width="250" alt="Mobile View">
 <img src="screenshots/mobile-view2.png" width="250" alt="Mobile View">
 
 
