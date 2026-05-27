@@ -5,6 +5,15 @@ dengan memperhitungkan biaya admin Shopee, program Gratis Ongkir Xtra, dan layan
 
 Live Demo :  https://sutrisno-u.github.io/shopee-pricing-calculator
 
+## 📸 Screenshots
+
+### Desktop View
+![Desktop View](screenshots/desktop-view.png)
+
+### Mobile View
+![Mobile View](screenshots/mobile-view1.jpg)
+![Mobile View](screenshots/mobile-view2.jpg)
+
 Fitur Utama : 
 
 Kalkulasi Akurat : Rumus (Modal + Profit) ÷ (1 - Total Fee) untuk hasil presisi  
