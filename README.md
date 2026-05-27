@@ -42,9 +42,17 @@ Harga Jual = (50.000 + 10.000) ÷ (1 - 0.09)
 - **GitHub Pages** — Hosting gratis & deployment otomatis
 
 Clone Repository
-bash
+
 git clone https://github.com/sutrisno-u/shopee-pricing-calculator.git
-cd shopee-pricing-calculator
+
+Buka di Browser :
+Cukup buka file index.html di browser favorit Anda.
+Atau Gunakan Live Server (VS Code)
+
+    Install extension "Live Server"
+    Klik kanan index.html → "Open with Live Server"
+    Aplikasi berjalan di http://localhost:5500
+
 
 v1.0.0 (2026)
 
