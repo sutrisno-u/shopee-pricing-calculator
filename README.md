@@ -3,6 +3,8 @@ Shopee Pricing Calculator
 Kalkulator Pricing untuk Seller Shopee Indonesia. Menghitung harga jual produk secara akurat  
 dengan memperhitungkan biaya admin Shopee, program Gratis Ongkir Xtra, dan layanan shopee lainnya.
 
+Klik link live demo ini dan sebuah landing page akan terbuka di browser kesayangan kalian :
+
 Live Demo :  https://sutrisno-u.github.io/shopee-pricing-calculator
 
 ## 📸 Screenshots
@@ -19,24 +21,24 @@ Live Demo :  https://sutrisno-u.github.io/shopee-pricing-calculator
 Fitur Utama : 
 
 Kalkulasi Akurat : Rumus (Modal + Profit) ÷ (1 - Total Fee) untuk hasil presisi  
-✅ **Input Fleksibel** Langsung input persentase fee sesuai kategori produk Anda  
-✅ **Breakdown Transparan** — Lihat detail : fee Shopee, penerimaan bersih, dan profit  
-✅ **Mobile Responsive** — Desain optimal untuk smartphone seller yang mobile    
+✅ **Input Fleksibel** Langsung input persentase Biaya admin sesuai kategori produk Anda  
+✅ **Breakdown Transparan** — Lihat detail : B.admin Shopee, pendapatan bersih atau profit 
+✅ **Mobile Responsive** — Desain dioptimalkan untuk tampilan smartphone yang kecil dan mobile
 ✅ **Validasi Input** — Mencegah kesalahan input dengan validasi real-time  
-✅ **100% Gratis** — Open source, tanpa iklan, dan tanpa tracking
+✅ **100% Gratis** — tanpa iklan, dan tanpa tracking
 
 **Cara Menggunakan**
 
 1. **Input Modal/HPP** — Harga beli atau biaya produksi produk (Rp)
 2. **Input Target Keuntungan** — Profit yang diinginkan (Rp)
-3. **Input Total Biaya Admin** — Persentase fee Shopee (contoh: 12.75%)
+3. **Input Total Biaya Admin** — Persentase biaya admin Shopee (contoh: 12.75%)
    - Termasuk: biaya admin + gratis ongkir xtra + program lainnya
-4. **Klik "Hitung Harga Jual"** — Lihat hasil kalkulasi dengan breakdown lengkap
+4. **Klik "Hitung Harga Jual"** — Lihat hasil kalkulasi dengan breakdown yang lengkap
 
 Harga Jual = (Modal + Keuntungan) ÷ (1 - %Total Biaya)
 Dimana:
 • Total Biaya = Biaya admin + Layanan Shopee (Gratis Ongkir Xtra, dll)
-• Fee dalam desimal (contoh: 9% = 0.09)
+• Biaya admin dalam desimal (contoh: 9% = 0.09)
 
 Modal: Rp 50.000
 Profit: Rp 10.000
@@ -73,13 +75,15 @@ v1.0.0 (2026)
 
 👨‍💻 Author
 Sutrisno U
-GitHub: @sutrisno-u
+<p>GitHub: @sutrisno-u</p>
 
-🙏 Acknowledgments
+## 🙏 Acknowledgments
 
-    Seller Shopee Indonesia — Untuk inspirasi & feedback
-    The Odin Project — Untuk pembelajaran HTML/CSS/JS
-    GitHub Pages — Untuk hosting gratis
-    Open Source Community — Untuk tools & inspirasi
-    
-Made with ❤️ for Indonesian UMKM          
+Special thanks to:
+- **Seller Shopee Indonesia** — Inspiration & feedback
+- **The Odin Project** — HTML/CSS/JS learning resources
+- **GitHub Pages** — Free hosting infrastructure
+- **Open Source Community** — Tools & endless inspiration
+
+*Dibuat dengan ❤️ untuk UMKM Indonesia*
+
