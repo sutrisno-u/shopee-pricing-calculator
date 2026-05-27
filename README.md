@@ -8,11 +8,12 @@ Live Demo :  https://sutrisno-u.github.io/shopee-pricing-calculator
 ## 📸 Screenshots
 
 ### Desktop View
-![Desktop View](screenshots/desktop-view.png)
-
+<img src="screenshots/desktop-view.png" width="600" alt="Desktop View">
 ### Mobile View
-![Mobile View](screenshots/mobile-view1.jpg)
-![Mobile View](screenshots/mobile-view2.jpg)
+<div align="center">
+  <img src="screenshots/mobile-view1.png" width="250" alt="Mobile View">
+  <img src="screenshots/mobile-view2.png" width="250" alt="Mobile View">
+</div>
 
 Fitur Utama : 
 
