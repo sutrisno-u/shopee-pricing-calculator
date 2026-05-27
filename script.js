@@ -1,121 +1,81 @@
+// ===== DOM SELECTION =====
 const form = document.getElementById('pricing-form');
 const modalInput = document.getElementById('modal');
 const profitInput = document.getElementById('profit');
-const categorySelect = document.getElementById('category');
-const ongkirCheckbox = document.getElementById('ongkir-xtra');
+const totalFeeInput = document.getElementById('total-fee'); // ✅ Input fee baru
 const outputDisplay = document.getElementById('hasil');
 
-// Custom category elements
-const customCategoryGroup = document.getElementById('custom-category-group');
-const customCategoryInput = document.getElementById('custom-category');
-const customFeeInput = document.getElementById('custom-fee');
-
-const ADMIN_FEES = {
-    'aksesoris': 0.09,
-    'fashion-bayi': 0.09,
-    'fashion-muslim': 0.10,
-    'jam-tangan': 0.09,
-    'koper-tas': 0.10
-};
-
-// Show/hide custom category input
-categorySelect.addEventListener('change', () => {
-    if (categorySelect.value === 'custom') {
-        customCategoryGroup.style.display = 'block';
-        customCategoryInput.required = true;
-        customFeeInput.required = true;
-    } else {
-        customCategoryGroup.style.display = 'none';
-        customCategoryInput.required = false;
-        customFeeInput.required = false;
-        customCategoryInput.value = '';
-        customFeeInput.value = '';
-    }
-});
-
+// ===== EVENT: SUBMIT =====
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   
+  // 1. Ambil & parse input
   const modal = Number(modalInput.value);
   const profit = Number(profitInput.value);
-  const category = categorySelect.value;
-
-  // Validasi awal
-  if (!modal || !profit || !category) {
-    outputDisplay.textContent = "Tolong diisi semua fieldnya";
+  const feePercent = Number(totalFeeInput.value);
+  
+  // 2. Validasi dasar
+  if (!modal || !profit || feePercent === '') {
+    outputDisplay.textContent = "Mohon lengkapi semua field!";
     return;
   }
-
-  // Hitung fee (handle custom category)
-  let adminFee;
-  let categoryName;
-
-  if (category === 'custom') {
-    // Custom category
-    categoryName = customCategoryInput.value || 'Kategori Custom';
-    const customFee = Number(customFeeInput.value);
-    
-    if (!customFee || customFee < 0 || customFee > 100) {
-        outputDisplay.textContent = "Biaya admin tidak valid (0-100%)!";
-        return;
-    }
-    
-    adminFee = customFee / 100;
-  } else {
-    // Predefined category
-    if (!(category in ADMIN_FEES)) {
-        outputDisplay.textContent = "Kategori tidak valid!";
-        return;
-    }
-    
-    adminFee = ADMIN_FEES[category];
-    categoryName = categorySelect.options[categorySelect.selectedIndex].text.split('(')[0].trim();
-  }
-
-  // Validasi modal harus > 0
+  
+  // 3. Validasi nilai masuk akal
   if (modal <= 0) {
-    outputDisplay.textContent = "Modal harus lebih dari 0!";
+    outputDisplay.textContent = "Modal angkanya harus > dari angka 0!";
     return;
   }
-
-  // Validasi profit tidak boleh negatif 
   if (profit < 0) {
     outputDisplay.textContent = "Profit tidak boleh negatif!";
     return;
   }
-  
-  const totalFee = adminFee + (ongkirCheckbox.checked ? 0.045 : 0);
-  
-  if (totalFee >= 1) {
-     outputDisplay.textContent = "Total biaya tidak boleh ≥ 100%!";
-     return;
+  if (feePercent < 0 || feePercent > 100) {
+    outputDisplay.textContent = "Biaya admin dimulai dari 0-100%!";
+    return;
   }
   
+  // 4. Merubah persentase ke angka desimal
+  const totalFee = feePercent / 100;
+  
+  // 5. Mencegah pembagian dengan angka nol
+  if (totalFee >= 1) {
+    outputDisplay.textContent = "Total biaya tidak boleh ≥ 100%!";
+    return;
+  }
+  
+  // 6. Rumus inti
   const hargaJual = (modal + profit) / (1 - totalFee);
-
+  
+  // 7. Format mata uang rupiah
   const formatter = new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
     minimumFractionDigits: 0
   });
-
+  
+  // 8. Menampilkan hasil & breakdown
+  const feeAmount = hargaJual * totalFee;
+  const netAmount = hargaJual - feeAmount;
+  
   outputDisplay.innerHTML = `
     <strong>Harga Jual: ${formatter.format(hargaJual)}</strong><br>
-    <small>Kategori: ${categoryName} | Total Fee: ${(totalFee * 100).toFixed(2)}%</small>
+    <small>
+      • Fee Shopee (${feePercent}%): ${formatter.format(feeAmount)}<br>
+      • Diterima Bersih: ${formatter.format(netAmount)}<br>
+      • Profit: ${formatter.format(profit)}
+    </small>
   `;
 });
 
+// ===== EVENT: RESET =====
 form.addEventListener('reset', () => {
-     outputDisplay.textContent = '';
-     categorySelect.value = '';
-     customCategoryGroup.style.display = 'none';
-     customCategoryInput.value = '';
-     customFeeInput.value = '';
+  outputDisplay.textContent = '';
 });
 
-// No bubble dialog
-['modal', 'profit', 'category', 'custom-category', 'custom-fee'].forEach(id => {
-    document.getElementById(id).addEventListener('invalid', (e) => {
-        e.preventDefault();
-    });
+// ===== NO BUBBLE DIALOG =====
+['modal', 'profit', 'total-fee'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener('invalid', (e) => e.preventDefault());
+  }
 });

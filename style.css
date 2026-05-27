@@ -88,19 +88,6 @@ tr:nth-child(even) {
     gap: 10px;
 }
 
-/* BASE STYLE (luar media query) */
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px; /* 👈 Tambah ini */
-}
-
-.checkbox-group input[type="checkbox"] {
-    width: auto;
-    margin: 0;
-}
-
 @media (max-width: 480px) {
     .button1:active {
          transform: translateY(0);
@@ -115,19 +102,18 @@ tr:nth-child(even) {
         margin-bottom: 10px;
     }
 
-
 body {
         background-color: #C2F8CB;
-        padding: 15px 10px; /* Memperkecil jarak pinggir layar di HP */
+        padding: 15px 10px; /* Memperkecil jarak pinggiran layar hp */
     }
 
     header h1 {
-        font-size: 1.5rem; /* Mengecilkan ukuran judul utama */
+        font-size: 1.5rem; /* Mengecilkan ukuran font H1 */
     }
 
     section p {
-        font-size: 14px; /* Mengecilkan teks penjelasan */
-        text-align: left; /* Teks rata kiri lebih nyaman dibaca di layar sempit */
+        font-size: 14px; /* Mengecilkan teks hero section */
+        text-align: left; /* Teks rata kiri untuk kenyamanan membaca di layar kecil */
     }
 
      table {
@@ -137,57 +123,47 @@ body {
         padding: 8px 4px; 
     }
 
-    /* Mengubah form dari samping menjadi tersusun ke bawah */
+    /* Mengubah susunan form dari row menjadi column */
     .form-group {
         display: flex;
         flex-direction: column;
         gap: 8px;
     }
-    
-    .checkbox-group {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 10px;
-        margin-bottom: 29px;
-    }
 
-    .checkbox-group input[type="checkbox"] {
-        width: auto;
-        margin: 0;
-    }
-    
-    /* Custom category group padding */
-    #custom-category-group {
-        padding: 10px;
+    input[type="number"] {
+        padding: 15px;
+        font-size: 18px;
     }
 }   
 
-#custom-category-group {
-    background-color: #f0f9f4;
-    padding: 15px;
-    border-radius: 8px;
-    border: 2px dashed #1B512D;
-    margin-top: 10px;
-}
-
-#custom-category-group label {
+.form-group small {
     display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-#custom-category-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #1B512D;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-#custom-category-group small {
-    display: block;
-    margin-top: 5px;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #666;
     font-style: italic;
 }
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #1B512D;
+    border-radius: 8px;
+    background-color: white;
+    transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #2E7D32;
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.3);
+}
+
+label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+

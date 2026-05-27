@@ -65,36 +65,18 @@
             <input type="number" id="profit" name="profit" placeholder="Contoh: 10000" required min="0"> 
             </div>
 
-            <div class="form-group">
-            <label for="category">Kategori Produk</label>
-            <select id="category" name="category" required>
-                <option value="" disabled selected>Pilih Kategori...</option>
-                <option value="aksesoris">Aksesoris Fashion (4.25% - 9%)</option>
-                <option value="fashion-bayi">Fashion Bayi Dan Anak (4.25% - 9%)</option>
-                <option value="fashion-muslim">Fashion Muslim (8.25% - 10%)</option>
-                <option value="jam-tangan">Jam Tangan (9%)</option>
-                <option value="koper-tas">Koper & Tas Travel (9% - 10%)</option>
-                <option value="custom">--- Lainnya (input manual) ---</option>
-            </select>   
-            </div>
-            <!-- Custom Category Input (hidden by default) --> 
-            <div class="form-group" id="custom-category-group" style="display: none;">
-    <label for="custom-category">Nama Kategori</label>
-    <input type="text" id="custom-category" placeholder="Contoh: Elektronik, Rumah Tangga, dll">
-    
-    <label for="custom-fee" style="margin-top: 10px;">Biaya Admin Shopee (%)</label>
-    <input type="number" id="custom-fee" placeholder="Contoh: 8.5" step="0.01" min="0" max="100">
-    <small style="color: #666;">Masukkan persentase biaya admin (tanpa tanda %)</small>
-</div>
+            <!-- Input Total Biaya Shopee (%) -->
+             <div class="form-group">
+                <label for="total-fee">Total Biaya Admin dan program Shopee (%)</label>
+                <input type="number" id="total-fee" name="total-fee" placeholder="Contoh : 12.75" step="0.01" min="0" max="100" required>
+                <small style="color: #666;">Isi dengan total persentase dari : biaya admin + gratis ongkir xtra + program lainnya
+                </small> 
+             </div>
 
-            <div class="form-group checkbox-group">
-                <input type="checkbox" id="ongkir-xtra" name="ongkir-xtra">
-                <label for="ongkir-xtra">Tambahkan Gratis Ongkir Xtra (+4.5%)</label>
-            </div>
             <div class="button-group" style="margin-top: 20px;">
             <button type="submit" class="button1">Hitung Harga Jual</button>
             <button type="reset" class="button1" style="margin-left: 10px;">Reset Form</button>
-            </div>
+            </div> 
             </form>
 
             <output id="hasil" aria-live="polite"></output>
