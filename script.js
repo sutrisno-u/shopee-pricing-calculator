@@ -2,7 +2,7 @@
 const form = document.getElementById('pricing-form');
 const modalInput = document.getElementById('modal');
 const profitInput = document.getElementById('profit');
-const totalFeeInput = document.getElementById('total-fee'); // ✅ Input fee baru
+const totalFeeInput = document.getElementById('total-fee'); // Input fee baru
 const outputDisplay = document.getElementById('hasil');
 
 // ===== EVENT: SUBMIT =====
@@ -20,7 +20,7 @@ form.addEventListener('submit', (e) => {
     return;
   }
   
-  // 3. Validasi nilai masuk akal
+  // 3. Validasi nilai 
   if (modal <= 0) {
     outputDisplay.textContent = "Modal angkanya harus > dari angka 0!";
     return;
